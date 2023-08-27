@@ -1,6 +1,7 @@
 import csv
 from menu import menu
 
-exit = False
+cycles = False
 
-menu(exit)
+
+menu(cycles)
