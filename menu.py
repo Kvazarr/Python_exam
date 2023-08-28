@@ -2,6 +2,7 @@ import os
 import time
 from create import create_case
 from remove import remove_case
+from show import show_case
 
 
 def menu(cycles):
@@ -13,11 +14,10 @@ def menu(cycles):
 
             if choice == 1:
                 create_case()
-                os.system("clear")
-                print("/// Your scheduled case has been successfully created in the \"Show to-do list\" section!")
-                time.sleep(3)
             elif  choice == 2:
                 remove_case()
+            elif choice == 5:
+                show_case()
             elif choice == 0:
                 os.system("clear")
                 print("/// Bye. Come again! ///")
