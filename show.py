@@ -56,6 +56,9 @@ def show_case():
             if next_step == 1:
                 sort_priority()
                 cycles = True
+            elif next_step == 2:
+                sort_date()
+                cycles = True
             elif next_step == 0:
                 cycles = True
         except ValueError:
@@ -105,6 +108,8 @@ def show_year():
         counter = 1
 
         for i in reader:
+            if i[4] == 'Data':
+                continue
             temp = i[4]
             data_year = datetime.datetime.strptime(temp, '%Y-%m-%d')
             if data_year.year == today_year:
@@ -137,6 +142,30 @@ def sort_priority():
     with open('quest.csv', 'w') as file:
         writer = csv.writer(file)
         writer.writerows(main_sorted)
+
+    os.system("clear")
+    print("/// Your to-do list has been successfully sorted by priority!")
+    time.sleep(2.5)
+
+
+
+def sort_date():
+    with open('quest.csv', 'r') as file:
+        reader = csv.reader(file)
+        rows = []
+
+        for i in reader:
+            if i[0] == 'ID':
+                continue
+            rows.append(i)
+
+        sorted_rows = sorted(rows, key=lambda x: x)
+
+    with open('quest.csv', 'w') as file:
+        writer = csv.writer(file)
+
+        for i in sorted_rows:
+            writer.writerow(i)
 
     os.system("clear")
     print("/// Your to-do list has been successfully sorted by priority!")
