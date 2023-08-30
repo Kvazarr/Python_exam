@@ -18,12 +18,16 @@ def remove_case():
 
         try:
             print("================================================")
-            id_to_remove = int(input("/// Enter the ID of the case you want to delete:\n>>>"))
+            id_to_remove = int(input("/// Enter the ID of the case you want to delete(0 for exit):\n>>>"))
+
+            if id_to_remove == 0:
+                return
+
             id_juxtaposition(id_to_remove)
             cycles = True
         except ValueError:
             os.system("clear")
-            print(f">>>Error! Remember, ID should only consist of numbers.....")
+            print(f">>>Error! Remember, ID should only consist of numbers...")
             time.sleep(2)
 
 

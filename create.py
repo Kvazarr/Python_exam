@@ -12,7 +12,7 @@ def create_case():
 
         for i in reader:
             if i[0] == "ID":
-                break
+                break 
             else:
                 with open('quest.csv', 'w') as file:
                     file.truncate(0)
@@ -47,7 +47,6 @@ def create_case():
 
 def create_data():
     cycles = False
-    hour = 24
 
     while cycles != True:
         os.system("clear")
@@ -66,7 +65,8 @@ def create_data():
                                         day = int(input("Enter the day: "))
 
                                         if day >= 1 and day <= 31:
-                                            selected_time = datetime.datetime(year, month, day, hour)
+                                            selected_time = datetime.date(year, month, day)
+                                            cycles = True
                                             return selected_time
                                         else:
                                             os.system("clear")
@@ -76,7 +76,8 @@ def create_data():
                                         day = int(input("Enter the day: "))
 
                                         if day >=1 and day <= 30:
-                                            selected_time = datetime.datetime(year, month, day, hour)
+                                            selected_time = datetime.date(year, month, day)
+                                            cycles = True
                                             return selected_time
                                         else:
                                             os.system("clear")
@@ -86,7 +87,8 @@ def create_data():
                                         day = int(input("Enter the day: "))
 
                                         if day >= 1 and day <= 28:
-                                            selected_time = datetime.datetime(year, month, day, hour)
+                                            selected_time = datetime.date(year, month, day)
+                                            cycles = True
                                             return selected_time
                                         else:
                                             os.system("clear")

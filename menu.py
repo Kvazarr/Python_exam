@@ -2,6 +2,8 @@ import os
 import time
 from create import create_case
 from remove import remove_case
+from edit import edit_case
+from search import search_case
 from show import show_case
 
 
@@ -16,6 +18,10 @@ def menu(cycles):
                 create_case()
             elif  choice == 2:
                 remove_case()
+            elif choice == 3:
+                edit_case()
+            elif choice == 4:
+                search_case()
             elif choice == 5:
                 show_case()
             elif choice == 0:
